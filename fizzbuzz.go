@@ -1,11 +1,9 @@
 package fizzbuzz
 
+var rules = []Rule{&FizzBuzzRule{}, &BuzzRule{}, &FizzRule{}, &OtherRule{}}
+
 func Say(arabic int) string {
-
     var answer string
-    var rules []Rule
-
-    rules = []Rule{&FizzBuzzRule{}, &BuzzRule{}, &FizzRule{}, &OtherRule{}}
 
     for _, rule := range rules {
         if rule.IsHandle(arabic){
@@ -13,5 +11,6 @@ func Say(arabic int) string {
             break
         }
     }
+
     return answer
 }
